@@ -40,7 +40,7 @@ public class Controller {
     /**
      * Method that changes the text in the label where the decimal clock is shown
      */
-    void digitalClock() {
+    private void digitalClock() {
         LocalTime localTime = LocalTime.now();
 
         clockLabel.setText((localTime.getHour() < 10 ? "0" + localTime.getHour() : localTime.getHour())
@@ -51,7 +51,7 @@ public class Controller {
     /**
      * Method that changes color of circle in binary clock
      */
-    void binaryClock() {
+    private void binaryClock() {
         LocalTime localTime = LocalTime.now();
         Circle[] secFirstColumn = {S_0_3, S_0_2, S_0_1, S_0_0};
         Circle[] secSecondaryColumn = {S_1_2, S_1_1, S_1_0};
@@ -117,7 +117,7 @@ public class Controller {
      * @param number numbet that should be converted to binary string
      * @return string of sequence binary
      */
-    String digitalToBinary(int number) {
+    private String digitalToBinary(int number) {
         StringBuilder string = new StringBuilder();
 
         if (number / 2 > 0) string.append(digitalToBinary(number / 2));
